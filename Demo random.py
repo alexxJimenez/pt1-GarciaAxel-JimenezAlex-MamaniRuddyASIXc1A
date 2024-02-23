@@ -1,4 +1,6 @@
 import random
 
-palabra = input()
+palabra = input().split()
 
+hol = random.shuffle(palabra)
+print(hol)
