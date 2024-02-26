@@ -18,8 +18,8 @@ def frase(text):
     return ' '.join(text_desordenat)
 
 def imprimir_text():
-    usuari = input("Please enter a text: ")
-    print("Disordered version:")
+    usuari = input("Introdueix el text: ")
+    print("Text desordenat: ")
     print(frase(usuari))
 
 imprimir_text()
