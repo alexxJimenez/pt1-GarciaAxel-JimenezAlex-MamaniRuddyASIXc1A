@@ -1,11 +1,5 @@
-"""
-Nom: Axel Garcia Hernandez, Alex Jimenez Navarro, Ruddy Alan Mamani Quiñones
-ASIXc 1A M03 UF1
-Data: 26/02/2024
-Descripció: Programa que desordena les lletres interiors de les paraules d'un text
-"""
 import random
-
+import re
 
 def desordenar_lletres(paraula):
     if paraula.isalnum():
@@ -22,21 +16,30 @@ def desordenar_lletres(paraula):
             random.shuffle(lletres_interiors)
             return paraula[0] + paraula[1] + ''.join(lletres_interiors) + paraula[-2] + paraula[-1]
 
+def desordenar_correo(correo):
+    usuario, dominio = correo.split('@')
+    usuario_desordenado = desordenar_lletres(usuario)
+    dominio_nombre, dominio_extension = dominio.split('.')
+    dominio_nombre_desordenado = desordenar_lletres(dominio_nombre)
+    dominio_extension_desordenado = desordenar_lletres(dominio_extension)
+    correo_desordenado = f"{usuario_desordenado}@{dominio_nombre_desordenado}.{dominio_extension_desordenado}"
+    return correo_desordenado
+
 def frase(text):
     paraules = text.split()
     text_desordenat = []
     for paraula in paraules:
-        if len(paraula) > 3:
+        if len(paraula) > 3 and '@' in paraula and "." in paraula:
+            text_desordenat.append(desordenar_correo(paraula))
+        elif len(paraula) > 3:
             text_desordenat.append(desordenar_lletres(paraula))
         else:
             text_desordenat.append(paraula)
     return ' '.join(text_desordenat)
 
-
 def imprimir_text():
     usuari = input("Introdueix el text: ")
     print("Text desordenat:", frase(usuari))
-
 
 # main
 imprimir_text()
