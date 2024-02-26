@@ -24,4 +24,5 @@ def imprimir_text():
     print(frase(usuari))
 
 
+# main
 imprimir_text()
