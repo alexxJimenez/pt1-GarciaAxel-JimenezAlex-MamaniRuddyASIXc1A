@@ -17,4 +17,3 @@ def tratar_palabras():
 obtener_frase()
 tratar_palabras()
 print(tratar_palabras())
-
