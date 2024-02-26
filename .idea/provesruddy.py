@@ -1,3 +1,9 @@
+"""
+Nom: Axel Garcia Hernandez, Alex Jimenez Navarro, Ruddy Alan Mamani Quiñones
+ASIXc 1A M03 UF1
+Data: 26/02/2024
+Descripció: Programa que desordena les lletres interiors de les paraules d'un text
+"""
 import random
 
 
