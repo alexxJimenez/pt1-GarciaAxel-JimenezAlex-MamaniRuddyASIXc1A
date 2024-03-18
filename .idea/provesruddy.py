@@ -8,7 +8,9 @@ import random
 
 
 def desordenar_lletres(paraula):
-    if paraula.isalnum():
+    if '@' in paraula:
+        return paraula  # Si la palabra contiene '@', no se procesa
+    elif paraula.isalnum():
         lletres_interiors = list(paraula[1:-1])
         random.shuffle(lletres_interiors)
         return paraula[0] + ''.join(lletres_interiors) + paraula[-1]
