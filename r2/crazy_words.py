@@ -38,12 +38,12 @@ def comprovar_paraules(text):
     text_desordenat = []
     for paraula in paraules:
         if any(char.isdigit() for char in paraula):
-            return paraula
+            text_desordenat.append(paraula)
         elif "://" in paraula or 'www.' in paraula:
-            return paraula
-        if len(paraula) > 3 and '@' in paraula and "." in paraula:
+            text_desordenat.append(paraula)
+        elif len(paraula) > 3 and '@' in paraula and "." in paraula:
             text_desordenat.append(desordenar_correo(paraula))
-        if len(paraula) > 3:
+        elif len(paraula) > 3:
             text_desordenat.append(desordenar_lletres(paraula))
         else:
             text_desordenat.append(paraula)
