@@ -1,3 +1,9 @@
+"""
+Alex Jimenez
+2-10-2023
+ASIXc 1A M03 UF1 A2
+"""
+
 import random
 
 
@@ -31,7 +37,7 @@ def desordenar_correo(correo):
     return correo_desordenado
 
 
-def frase(text):
+def comprovar_paraules(text):
     paraules = text.split()
     text_desordenat = []
     for paraula in paraules:

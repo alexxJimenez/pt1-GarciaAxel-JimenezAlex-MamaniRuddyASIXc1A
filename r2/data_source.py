@@ -1,4 +1,6 @@
 import crazy_words
+import requests
+import
 
 def get_data_from_keyboard():
     usuari = input("Introdueix el text: ")
