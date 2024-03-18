@@ -13,11 +13,9 @@ def get_data_from_keyboard():
     print("Text desordenat:", crazy_words.comprovar_paraules(usuari))
 
 def get_data_from_server():
-    get_url = input().lower()
-    while "www." not in get_url:
-        get_url = input().lower()
-    requests.get(get_url)
-
+    URL = "https://example-files.online-convert.com/document/txt/example.txt"
+    trucada = requests.get(URL).text
+    print("Text desordenat:", crazy_words.comprovar_paraules(trucada))
 def get_data_from_chatgpt():
     print()
 
