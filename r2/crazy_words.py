@@ -1,7 +1,7 @@
 """
 Alex Jimenez, Axel García i Ruddy Mamani
-2-10-2023
-ASIXc 1A M03 UF1 A2
+18-03-2024
+ASIXc 1A M03 UF2 pt1 R2
 """
 
 import random

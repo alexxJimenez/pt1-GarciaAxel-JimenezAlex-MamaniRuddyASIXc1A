@@ -1,3 +1,9 @@
+"""
+Alex Jimenez, Axel García i Ruddy Mamani
+18-03-2024
+ASIXc 1A M03 UF2 pt1 R2
+"""
+
 import crazy_words
 import requests
 
