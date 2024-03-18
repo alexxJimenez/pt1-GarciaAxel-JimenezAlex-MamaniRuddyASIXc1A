@@ -1,7 +1,10 @@
 import random
-import re
+
 
 def desordenar_lletres(paraula):
+    if any(char.isdigit() for char in paraula):
+        return paraula
+
     if paraula.isalnum():
         lletres_interiors = list(paraula[1:-1])
         random.shuffle(lletres_interiors)
@@ -16,6 +19,7 @@ def desordenar_lletres(paraula):
             random.shuffle(lletres_interiors)
             return paraula[0] + paraula[1] + ''.join(lletres_interiors) + paraula[-2] + paraula[-1]
 
+
 def desordenar_correo(correo):
     usuario, dominio = correo.split('@')
     usuario_desordenado = desordenar_lletres(usuario)
@@ -24,6 +28,7 @@ def desordenar_correo(correo):
     dominio_extension_desordenado = desordenar_lletres(dominio_extension)
     correo_desordenado = f"{usuario_desordenado}@{dominio_nombre_desordenado}.{dominio_extension_desordenado}"
     return correo_desordenado
+
 
 def frase(text):
     paraules = text.split()
@@ -37,9 +42,11 @@ def frase(text):
             text_desordenat.append(paraula)
     return ' '.join(text_desordenat)
 
+
 def imprimir_text():
     usuari = input("Introdueix el text: ")
     print("Text desordenat:", frase(usuari))
+
 
 # main
 imprimir_text()
