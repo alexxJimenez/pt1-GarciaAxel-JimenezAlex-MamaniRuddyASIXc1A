@@ -1,5 +1,5 @@
 """
-Alex Jimenez
+Alex Jimenez, Axel García i Ruddy Mamani
 2-10-2023
 ASIXc 1A M03 UF1 A2
 """
@@ -8,11 +8,7 @@ import random
 
 
 def desordenar_lletres(paraula):
-    if any(char.isdigit() for char in paraula):
-        return paraula
-    if "://" in paraula:
-        return paraula
-    elif paraula.isalnum():
+    if paraula.isalnum():
         lletres_interiors = list(paraula[1:-1])
         random.shuffle(lletres_interiors)
         return paraula[0] + ''.join(lletres_interiors) + paraula[-1]
@@ -41,11 +37,13 @@ def comprovar_paraules(text):
     paraules = text.split()
     text_desordenat = []
     for paraula in paraules:
-        if len(paraula) > 3 and '@' in paraula and "." in paraula:
-            text_desordenat.append(desordenar_correo(paraula))
         if any(char.isdigit() for char in paraula):
             return paraula
-        elif len(paraula) > 3:
+        elif "://" in paraula or 'www.' in paraula:
+            return paraula
+        if len(paraula) > 3 and '@' in paraula and "." in paraula:
+            text_desordenat.append(desordenar_correo(paraula))
+        if len(paraula) > 3:
             text_desordenat.append(desordenar_lletres(paraula))
         else:
             text_desordenat.append(paraula)
