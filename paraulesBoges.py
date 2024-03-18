@@ -36,6 +36,8 @@ def frase(text):
     for paraula in paraules:
         if len(paraula) > 3 and '@' in paraula and "." in paraula:
             text_desordenat.append(desordenar_correo(paraula))
+        if any(char.isdigit() for char in paraula):
+            return paraula
         elif len(paraula) > 3:
             text_desordenat.append(desordenar_lletres(paraula))
         else:
@@ -43,10 +45,11 @@ def frase(text):
     return ' '.join(text_desordenat)
 
 
-def imprimir_text():
+def main():
     usuari = input("Introdueix el text: ")
     print("Text desordenat:", frase(usuari))
 
 
 # main
-imprimir_text()
+if __name__ == '__main__':
+    main()
