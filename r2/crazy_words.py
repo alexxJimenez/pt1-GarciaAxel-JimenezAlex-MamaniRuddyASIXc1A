@@ -34,8 +34,8 @@ def desordenar_correo(correo):
 
 
 def comprovar_paraules(text):
-    paraules = text.split('\n')
     text_desordenat = []
+    paraules = text.split("\n")
     for paraula in paraules:
         if any(char.isdigit() for char in paraula):
             text_desordenat.append(paraula)
