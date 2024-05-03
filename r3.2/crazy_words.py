@@ -48,14 +48,13 @@ def comprovar_paraules(text):
     text_desordenat = []
     for paraula in paraules:
         if "://" in paraula or 'www.' in paraula:
-            f.escriure_log("error",paraula)
+            f.escriure_log("warning","1",paraula)
             text_desordenat.append(paraula)
         elif len(paraula) > 3 and '@' in paraula and "." in paraula:
             text_desordenat.append(desordenar_correo(paraula))
         elif len(paraula) > 3:
             text_desordenat.append(desordenar_lletres(paraula))
         else:
-            f.escriure_log("warning", paraula)
             text_desordenat.append(paraula)
     return ' '.join(text_desordenat)
 
