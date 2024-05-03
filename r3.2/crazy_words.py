@@ -4,7 +4,8 @@ Alex Jimenez, Axel García i Ruddy Mamani
 ASIXc 1A M03 UF2 pt1 R2
 """
 
-import random, files as f
+import random, os
+from files import *
 
 
 def desordenar_lletres(paraula):
@@ -48,7 +49,7 @@ def comprovar_paraules(text):
     text_desordenat = []
     for paraula in paraules:
         if "://" in paraula or 'www.' in paraula:
-            f.escriure_log("warning","1",paraula)
+#            logging.warning("No es poden processar pàgines web")
             text_desordenat.append(paraula)
         elif len(paraula) > 3 and '@' in paraula and "." in paraula:
             text_desordenat.append(desordenar_correo(paraula))
@@ -56,5 +57,4 @@ def comprovar_paraules(text):
             text_desordenat.append(desordenar_lletres(paraula))
         else:
             text_desordenat.append(paraula)
-    return ' '.join(text_desordenat)
-
+    return retornar_arxius(' '.join(text_desordenat))
